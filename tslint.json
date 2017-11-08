@@ -1,0 +1,16 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:all"
+    ],
+    "jsRules": {},
+    "rules": {
+        "linebreak-style": [true, "CRLF"],
+        "variable-name": [true, "allow-leading-underscore"],
+        "no-inferrable-types": false,
+        "no-namespace": false,
+        "no-reference": false,
+        "comment-format": false
+    },
+    "rulesDirectory": []
+}

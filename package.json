@@ -1,0 +1,47 @@
+{
+    "name": "gitrepository",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "clean": "rm -rf dist",
+        "build:html": "html-minifier --input-dir ./src --output-dir ./dist --collapse-whitespace --file-ext html",
+        "build:styles": "mkdir -p ./dist/styles && csso ./src/styles/main.css --output ./dist/styles/main.css",
+        "build:scripts": "tsc",
+        "build": "run-s build:*",
+        "watch:html": "onchange \"src/*.html\" -- run-s build:html",        
+        "watch:styles": "csso ./src/styles/main.css --output ./dist/styles/main.css --watch",        
+        "watch:scripts": "tsc -w",
+        "watch": "run-p watch:*",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "eslintConfig": {
+        "env": {
+            "browser": true,
+            "es6": true
+        },
+        "extends": "eslint:recommended",
+        "rules": {
+            "indent": [
+                "error",
+                4
+            ],
+            "linebreak-style": [
+                "error",
+                "windows"
+            ],
+            "no-console": 0,
+            "quotes": [
+                "error",
+                "double"
+            ],
+            "semi": [
+                "error",
+                "always"
+            ]
+        }
+    },
+    "dependencies": {}
+}
